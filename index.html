@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Unofficial one-screen check for Making Tax Digital for Income Tax scope, start date and a printable readiness checklist. Not tax advice — use GOV.UK.">
+  <title>MTD ScopeCheck — Making Tax Digital for Income Tax</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <p class="site-header__eyebrow">Unofficial helper · UK</p>
+      <h1>MTD ScopeCheck</h1>
+      <p>A calmer one-screen view of whether Making Tax Digital for Income Tax may apply to you — plus a printable readiness checklist. Always confirm with GOV.UK.</p>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="panel no-print" aria-labelledby="form-heading">
+      <h2 id="form-heading">Check your scope</h2>
+      <p class="lede">Enter figures from the Self Assessment return for the tax year you select. Use <strong>turnover / gross income before expenses</strong>, not profit. Partnership profit share as an individual partner does not count.</p>
+
+      <form id="scope-form" novalidate>
+        <div class="field">
+          <span class="label" id="sa-label">Are you registered for Self Assessment?</span>
+          <span class="hint" id="sa-hint">MTD for Income Tax is for sole traders and landlords registered for Self Assessment.</span>
+          <div class="radio-row" role="group" aria-labelledby="sa-label" aria-describedby="sa-hint">
+            <label><input type="radio" name="sa" value="yes" required> Yes</label>
+            <label><input type="radio" name="sa" value="no"> No</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="taxYear">Tax year for these income figures</label>
+          <span class="hint" id="taxYear-hint">Match the year on the return you are checking against the published thresholds.</span>
+          <select id="taxYear" name="taxYear" required aria-describedby="taxYear-hint">
+            <option value="">Select a tax year</option>
+            <option value="2024-25">2024 to 2025 (threshold over £50,000 → from 6 April 2026)</option>
+            <option value="2025-26">2025 to 2026 (threshold over £30,000 → from 6 April 2027)</option>
+            <option value="2026-27">2026 to 2027 (threshold over £20,000 → from 6 April 2028)</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="soleTrader">Sole trader / self-employment turnover</label>
+          <span class="hint" id="sole-hint">Gross income before expenses (turnover), £ for the chosen tax year. Enter 0 if none.</span>
+          <div class="input-prefix">
+            <span aria-hidden="true">£</span>
+            <input type="number" id="soleTrader" name="soleTrader" min="0" step="1" inputmode="numeric" placeholder="0" required aria-describedby="sole-hint">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="property">UK property income (gross)</label>
+          <span class="hint" id="prop-hint">Gross rental / property income before expenses, £ for the chosen tax year. Your share if jointly owned. Enter 0 if none. Foreign property can count for UK residents — see GOV.UK qualifying income guidance for detail.</span>
+          <div class="input-prefix">
+            <span aria-hidden="true">£</span>
+            <input type="number" id="property" name="property" min="0" step="1" inputmode="numeric" placeholder="0" required aria-describedby="prop-hint">
+          </div>
+        </div>
+
+        <div class="field">
+          <span class="label" id="signedup-label">Have you already signed up for MTD for Income Tax? <span style="font-weight:400">(optional)</span></span>
+          <div class="radio-row" role="group" aria-labelledby="signedup-label">
+            <label><input type="radio" name="signedup" value="yes"> Yes</label>
+            <label><input type="radio" name="signedup" value="no"> No</label>
+            <label><input type="radio" name="signedup" value="unsure" checked> Not sure / skip</label>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn-primary">Show my result</button>
+          <button type="button" class="btn-secondary" id="print-btn">Print page</button>
+        </div>
+      </form>
+
+      <div class="note-box">
+        <p><strong>Prefer the official tool?</strong> Use the <a href="https://www.gov.uk/guidance/find-out-if-and-when-you-need-to-use-making-tax-digital-for-income-tax" target="_blank" rel="noopener">GOV.UK checker and guidance</a>. This page is a quieter summary plus checklist — not a clone of HMRC’s multi-step tool.</p>
+        <p>Partnerships: timeline not set yet. Exemptions exist (for example digitally excluded) — <a href="https://www.gov.uk/guidance/find-out-if-you-can-get-an-exemption-from-making-tax-digital-for-income-tax" target="_blank" rel="noopener">read GOV.UK</a>; we do not enumerate them here.</p>
+      </div>
+    </section>
+
+    <section id="result" class="panel" aria-live="polite" aria-atomic="true"></section>
+
+    <section class="panel sources" aria-labelledby="sources-heading">
+      <h2 id="sources-heading">GOV.UK sources used</h2>
+      <p>Facts on this page were taken from HMRC guidance (fetched or verified 3 September 2026). If anything is unclear or edge-case specific, the official pages take priority.</p>
+      <ul>
+        <li><a href="https://www.gov.uk/guidance/find-out-if-and-when-you-need-to-use-making-tax-digital-for-income-tax">Find out if and when you need to use Making Tax Digital for Income Tax</a> (last updated 26 March 2026) — who must use it, thresholds/start dates, official checker, partnerships note, Self Assessment return for the year before MTD, HMRC letters vs your responsibility.</li>
+        <li><a href="https://www.gov.uk/guidance/work-out-your-qualifying-income-for-making-tax-digital-for-income-tax">Work out your qualifying income</a> — turnover before expenses from self-employment and property; what does not count (including partnership profit share as an individual partner).</li>
+        <li><a href="https://www.gov.uk/guidance/use-making-tax-digital-for-income-tax/send-quarterly-updates">Send quarterly updates</a> — standard periods and deadlines; soft landing on late-update penalty points for 2026 to 2027.</li>
+        <li><a href="https://www.gov.uk/guidance/sign-up-for-making-tax-digital-for-income-tax">Sign up for Making Tax Digital for Income Tax</a> — sole traders and landlords.</li>
+        <li><a href="https://www.gov.uk/guidance/find-out-if-you-can-get-an-exemption-from-making-tax-digital-for-income-tax">Exemptions</a> and <a href="https://www.gov.uk/guidance/apply-for-an-exemption-from-making-tax-digital-for-income-tax">how to apply</a>.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p><strong>MTD ScopeCheck</strong> · built 2026 · not affiliated with HMRC or GOV.UK.</p>
+      <p>Not tax advice. No accounts, cookies wall, or analytics SaaS required. All calculations run in your browser.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
