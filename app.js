@@ -28,6 +28,9 @@
 
   var TODAY = new Date(2026, 8, 3); // 3 Sep 2026 (local)
 
+  // Sage UK Impact tracking URL. Empty until a live link is issued.
+  var SAGE_TRACKING_URL = "https://sageuklimited.sjv.io/5kGrQj";
+
   var form = document.getElementById("scope-form");
   var resultEl = document.getElementById("result");
   var printBtn = document.getElementById("print-btn");
@@ -89,6 +92,28 @@
     }
 
     return hints;
+  }
+
+
+  function affiliateHtml(inScope) {
+    if (!inScope || !SAGE_TRACKING_URL) return "";
+    return (
+      '<div class="affiliate no-print" role="complementary">' +
+      '<p class="affiliate__kicker">Software · affiliate link disclosed</p>' +
+      "<h3>Choose compatible software</h3>" +
+      "<p>If you are in scope you need HMRC-recognised software for digital records and quarterly updates. HMRC does not recommend a product. Start with the official finder. One paid option we can refer:</p>" +
+      "<ul>" +
+      '<li><a href="https://www.gov.uk/guidance/find-software-that-works-with-making-tax-digital-for-income-tax" target="_blank" rel="noopener">Official HMRC software finder and guidance</a></li>' +
+      "</ul>" +
+      '<div class="affiliate__card">' +
+      "<p><strong>Sage Accounting</strong> (Sage Business Cloud Accounting) is paid cloud accounting for small businesses and VAT-registered sole traders. This programme pays on that product, not on Sage&rsquo;s free Sole Trader app.</p>" +
+      '<p><a class="btn-primary affiliate__btn" href="' +
+      SAGE_TRACKING_URL +
+      '" target="_blank" rel="sponsored nofollow noopener">See Sage Accounting</a></p>' +
+      "</div>" +
+      '<p class="affiliate__disc"><strong>Affiliate disclosure.</strong> If you buy through the Sage link, we may earn a commission. It does not change the price you pay. Compare other recognised software on the HMRC finder before you choose.</p>' +
+      "</div>"
+    );
   }
 
   function selectedRadio(name) {
@@ -243,6 +268,7 @@
       "</div>" +
       metaHtml +
       detailParts.join("") +
+      affiliateHtml(data.inScope) +
       disclaimerHtml +
       (data.inScope || data.saRegistered ? quartersHtml : "") +
       checklistHtml +

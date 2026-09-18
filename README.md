@@ -45,3 +45,7 @@ Partnerships: timeline not set. Exemptions exist — linked, not enumerated from
 ## Out of scope
 
 No auth, Stripe, HMRC API, AI, accounts, email capture, or invoice/CIS tools.
+
+## Affiliate links
+
+The in-scope result may show a disclosed Sage Accounting (Sage Business Cloud Accounting) affiliate link from the Sage UK Impact programme. We do not promote Sage Sole Trader as commissionable. Always point people at the official HMRC software finder as well.

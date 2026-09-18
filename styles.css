@@ -334,6 +334,62 @@ button {
   font-weight: 700;
 }
 
+
+.affiliate {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  margin: 1.25rem 0;
+}
+
+.affiliate__kicker {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.affiliate h3 {
+  margin: 0.25rem 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.affiliate ul {
+  margin: 0.4rem 0 0.75rem;
+  padding-left: 1.2rem;
+}
+
+.affiliate__card {
+  background: var(--page);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.85rem 1rem;
+  margin: 0.75rem 0;
+}
+
+.affiliate__card p {
+  margin: 0.35rem 0;
+}
+
+.affiliate__card p:first-child {
+  margin-top: 0;
+}
+
+.affiliate__btn {
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 0.2rem;
+}
+
+.affiliate__disc {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0.5rem 0 0;
+}
+
 .disclaimer {
   background: #fff;
   border: 3px solid var(--warn);
