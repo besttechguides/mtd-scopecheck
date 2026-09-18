@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://besttechguides.github.io/mtd-scopecheck/sitemap.xml

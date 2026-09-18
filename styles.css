@@ -550,3 +550,29 @@ th {
     -webkit-print-color-adjust: exact;
   }
 }
+
+.site-header__brand {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  opacity: 0.85;
+}
+
+.faq details {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 0.75rem 0;
+}
+
+.faq details:last-child {
+  border-bottom: none;
+}
+
+.faq summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.faq details p {
+  margin: 0.6rem 0 0.2rem;
+}
