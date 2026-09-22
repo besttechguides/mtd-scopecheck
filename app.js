@@ -111,7 +111,7 @@
       SAGE_TRACKING_URL +
       '" target="_blank" rel="sponsored nofollow noopener">See Sage Accounting</a></p>' +
       "</div>" +
-      '<p class="affiliate__disc"><strong>Affiliate disclosure.</strong> If you buy through the Sage link, we may earn a commission. It does not change the price you pay. Compare other recognised software on the HMRC finder before you choose.</p>' +
+      '<p class="affiliate__disc"><strong>Ad / Affiliate disclosure.</strong> This is an affiliate link. If you buy Sage Accounting through it, we may earn a commission at no extra cost to you. We only show this Sage link on in-scope results. This site is not affiliated with HMRC. Not tax advice — confirm scope and software on GOV.UK.</p>' +
       "</div>"
     );
   }
